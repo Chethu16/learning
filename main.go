@@ -7,6 +7,7 @@ func main(){
 	chethanAccount.CheckBalance()
 	chethanAccount.CreditAmount(1000)
 	chethanAccount.CheckBalance()
+	chethanAccount.WithdrawAmount(500)
 	
 }
 
@@ -34,4 +35,15 @@ func (a *Account) CheckBalance(){
 }
 func (a *Account) CreditAmount(amount float32){
 a.Balance=a.Balance + amount 
+}
+
+func(a *Account) WithdrawAmount(amount float32){
+	if a.Balance >= amount{
+		a.Balance = a.Balance - amount
+		fmt.Println(a.Balance)
+
+	} else {
+		fmt.Println("error")
+	}
+
 }
